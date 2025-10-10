@@ -1,7 +1,28 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
+import { AuthContext } from '../App';
+
+const LogoutButton = () => {
+  const { logout } = useContext(AuthContext);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
+
+  if (!isAuthenticated) return null;
+
+  return (
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={logout}
+      className="flex items-center gap-2"
+    >
+      <ApperIcon name="LogOut" size={16} />
+      Logout
+    </Button>
+  );
+};
 
 const Header = ({ onMenuClick }) => {
   const navigate = useNavigate();
@@ -27,7 +48,8 @@ const Header = ({ onMenuClick }) => {
         </div>
       </div>
       
-      <div className="flex items-center gap-3">
+<div className="flex items-center gap-3">
+        <LogoutButton />
         <Button variant="ghost" size="sm" className="!p-2 hidden sm:flex">
           <ApperIcon name="Bell" size={20} />
         </Button>

@@ -67,5 +67,3 @@ const pipelineService = {
 };
 
 export default pipelineService;
-
-export default pipelineService;

@@ -282,4 +282,3 @@ const dealService = {
 };
 
 export default dealService;
-export default dealService;

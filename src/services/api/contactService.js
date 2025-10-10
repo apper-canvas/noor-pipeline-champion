@@ -221,5 +221,3 @@ const contactService = {
 };
 
 export default contactService;
-
-export default contactService;

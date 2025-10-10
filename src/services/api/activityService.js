@@ -293,5 +293,3 @@ const activityService = {
 };
 
 export default activityService;
-
-export default activityService;

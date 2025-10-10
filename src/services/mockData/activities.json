@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "contactId": 1,
+    "dealId": 1,
+    "subject": "Contract negotiation call",
+    "description": "Discussed final pricing and implementation timeline. Legal review expected by end of week.",
+    "timestamp": "2024-01-28T14:20:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "contactId": 2,
+    "dealId": 2,
+    "subject": "Technical documentation sent",
+    "description": "Sent integration specs and API documentation. Awaiting technical team review.",
+    "timestamp": "2024-01-27T16:45:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "contactId": 7,
+    "dealId": 7,
+    "subject": "Final presentation to executive team",
+    "description": "Presented solution to C-suite. Very positive reception. Contract to be sent today.",
+    "timestamp": "2024-01-30T09:30:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 4,
+    "type": "note",
+    "contactId": 5,
+    "dealId": 5,
+    "subject": "Competitor analysis",
+    "description": "Customer comparing with two competitors. Need to emphasize unique features and ROI.",
+    "timestamp": "2024-01-27T14:00:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 5,
+    "type": "call",
+    "contactId": 3,
+    "dealId": 3,
+    "subject": "Budget confirmation",
+    "description": "Budget approved for Q2. Legal review required before proceeding.",
+    "timestamp": "2024-01-25T10:30:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 6,
+    "type": "meeting",
+    "contactId": 6,
+    "dealId": 6,
+    "subject": "Product demo scheduled",
+    "description": "Demo scheduled for February 2nd. Will include training overview for 15-person team.",
+    "timestamp": "2024-01-28T11:15:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 7,
+    "type": "email",
+    "contactId": 8,
+    "dealId": 8,
+    "subject": "Security questionnaire sent",
+    "description": "Sent detailed security and compliance documentation addressing all concerns.",
+    "timestamp": "2024-01-30T10:45:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 8,
+    "type": "call",
+    "contactId": 4,
+    "dealId": 4,
+    "subject": "Initial discovery call",
+    "description": "Discussed requirements for CRM integration. Need to prepare technical spec.",
+    "timestamp": "2024-01-26T09:00:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 9,
+    "type": "note",
+    "contactId": 1,
+    "dealId": 9,
+    "subject": "Deal closed successfully",
+    "description": "Contract signed. Implementation kickoff scheduled for February 1st.",
+    "timestamp": "2024-01-20T16:00:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 10,
+    "type": "email",
+    "contactId": 3,
+    "dealId": 10,
+    "subject": "Follow-up after loss",
+    "description": "Sent thank you email. Will follow up in 3 months to check if needs have changed.",
+    "timestamp": "2024-01-25T14:30:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 11,
+    "type": "meeting",
+    "contactId": 2,
+    "dealId": 2,
+    "subject": "Technical deep dive",
+    "description": "Detailed technical presentation covering API capabilities and integration patterns.",
+    "timestamp": "2024-01-22T15:00:00Z",
+    "createdBy": "Sales Team"
+  },
+  {
+    "Id": 12,
+    "type": "call",
+    "contactId": 7,
+    "dealId": 7,
+    "subject": "Price confirmation",
+    "description": "Confirmed pricing structure. Customer very satisfied with proposed terms.",
+    "timestamp": "2024-01-29T11:00:00Z",
+    "createdBy": "Sales Team"
+  }
+]

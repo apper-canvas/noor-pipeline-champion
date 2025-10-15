@@ -6,18 +6,20 @@ import contactService from "@/services/api/contactService";
 import ApperIcon from "@/components/ApperIcon";
 
 const ContactForm = ({ contact, onSuccess, onCancel }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     name: contact?.name || "",
     email: contact?.email || "",
     phone: contact?.phone || "",
     company: contact?.company || "",
     title: contact?.title || "",
-    notes: contact?.notes || ""
+    notes: contact?.notes || "",
+    gender: contact?.gender || "",
+    dateOfBirth: contact?.dateOfBirth || ""
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const validateForm = () => {
+const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
@@ -25,6 +27,9 @@ const ContactForm = ({ contact, onSuccess, onCancel }) => {
       newErrors.email = "Invalid email format";
     }
     if (!formData.company.trim()) newErrors.company = "Company is required";
+    if (formData.dateOfBirth && !/^\d{4}-\d{2}-\d{2}$/.test(formData.dateOfBirth)) {
+      newErrors.dateOfBirth = "Invalid date format";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -94,6 +99,22 @@ const ContactForm = ({ contact, onSuccess, onCancel }) => {
           onChange={(e) => handleChange("company", e.target.value)}
           error={errors.company}
           placeholder="Company Name"
+        />
+<FormField
+          label="Gender"
+          name="gender"
+          value={formData.gender}
+          onChange={handleChange}
+          error={errors.gender}
+        />
+
+        <FormField
+          label="Date of Birth"
+          name="dateOfBirth"
+          type="date"
+          value={formData.dateOfBirth}
+          onChange={handleChange}
+          error={errors.dateOfBirth}
         />
       </div>
 

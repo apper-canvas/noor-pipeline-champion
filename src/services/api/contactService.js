@@ -8,7 +8,7 @@ const apperClient = new ApperClient({
 const contactService = {
   getAll: async () => {
     try {
-      const response = await apperClient.fetchRecords('contact_c', {
+const response = await apperClient.fetchRecords('contact_c', {
         fields: [
           {"field": {"Name": "Name"}},
           {"field": {"Name": "name_c"}},
@@ -17,6 +17,8 @@ const contactService = {
           {"field": {"Name": "company_c"}},
           {"field": {"Name": "title_c"}},
           {"field": {"Name": "notes_c"}},
+          {"field": {"Name": "gender_c"}},
+          {"field": {"Name": "date_of_birth_c"}},
           {"field": {"Name": "created_at_c"}},
           {"field": {"Name": "updated_at_c"}}
         ],
@@ -29,7 +31,7 @@ const contactService = {
       }
 
       // Map database fields to UI field names for backward compatibility
-      return response.data.map(contact => ({
+return response.data.map(contact => ({
         Id: contact.Id,
         name: contact.name_c || contact.Name,
         email: contact.email_c,
@@ -37,6 +39,8 @@ const contactService = {
         company: contact.company_c,
         title: contact.title_c,
         notes: contact.notes_c,
+        gender: contact.gender_c,
+        dateOfBirth: contact.date_of_birth_c,
         createdAt: contact.created_at_c,
         updatedAt: contact.updated_at_c
       }));
@@ -48,7 +52,7 @@ const contactService = {
 
   getById: async (id) => {
     try {
-      const response = await apperClient.getRecordById('contact_c', parseInt(id), {
+const response = await apperClient.getRecordById('contact_c', parseInt(id), {
         fields: [
           {"field": {"Name": "Name"}},
           {"field": {"Name": "name_c"}},
@@ -57,6 +61,8 @@ const contactService = {
           {"field": {"Name": "company_c"}},
           {"field": {"Name": "title_c"}},
           {"field": {"Name": "notes_c"}},
+          {"field": {"Name": "gender_c"}},
+          {"field": {"Name": "date_of_birth_c"}},
           {"field": {"Name": "created_at_c"}},
           {"field": {"Name": "updated_at_c"}}
         ]
@@ -67,7 +73,7 @@ const contactService = {
       }
 
       // Map database fields to UI field names
-      const contact = response.data;
+const contact = response.data;
       return {
         Id: contact.Id,
         name: contact.name_c || contact.Name,
@@ -76,6 +82,8 @@ const contactService = {
         company: contact.company_c,
         title: contact.title_c,
         notes: contact.notes_c,
+        gender: contact.gender_c,
+        dateOfBirth: contact.date_of_birth_c,
         createdAt: contact.created_at_c,
         updatedAt: contact.updated_at_c
       };
@@ -87,7 +95,7 @@ const contactService = {
 
   create: async (contactData) => {
     try {
-      // Map UI field names to database field names, only include Updateable fields
+// Map UI field names to database field names, only include Updateable fields
       const dbData = {
         name_c: contactData.name,
         email_c: contactData.email,
@@ -95,6 +103,8 @@ const contactService = {
         company_c: contactData.company,
         title_c: contactData.title,
         notes_c: contactData.notes,
+        gender_c: contactData.gender,
+        date_of_birth_c: contactData.dateOfBirth,
         created_at_c: new Date().toISOString(),
         updated_at_c: new Date().toISOString()
       };
@@ -119,7 +129,7 @@ const contactService = {
         const result = response.results[0];
         if (result.success) {
           // Map back to UI field names
-          const contact = result.data;
+const contact = result.data;
           return {
             Id: contact.Id,
             name: contact.name_c || contact.Name,
@@ -128,6 +138,8 @@ const contactService = {
             company: contact.company_c,
             title: contact.title_c,
             notes: contact.notes_c,
+            gender: contact.gender_c,
+            dateOfBirth: contact.date_of_birth_c,
             createdAt: contact.created_at_c,
             updatedAt: contact.updated_at_c
           };
@@ -145,7 +157,7 @@ const contactService = {
 
   update: async (id, contactData) => {
     try {
-      // Map UI field names to database field names, only include Updateable fields
+// Map UI field names to database field names, only include Updateable fields
       const dbData = {
         Id: parseInt(id)
       };
@@ -156,6 +168,8 @@ const contactService = {
       if (contactData.company !== undefined) dbData.company_c = contactData.company;
       if (contactData.title !== undefined) dbData.title_c = contactData.title;
       if (contactData.notes !== undefined) dbData.notes_c = contactData.notes;
+      if (contactData.gender !== undefined) dbData.gender_c = contactData.gender;
+      if (contactData.dateOfBirth !== undefined) dbData.date_of_birth_c = contactData.dateOfBirth;
       
       dbData.updated_at_c = new Date().toISOString();
 
@@ -171,7 +185,7 @@ const contactService = {
       if (response.results && response.results.length > 0) {
         const result = response.results[0];
         if (result.success) {
-          // Map back to UI field names
+// Map back to UI field names
           const contact = result.data;
           return {
             Id: contact.Id,
@@ -181,6 +195,8 @@ const contactService = {
             company: contact.company_c,
             title: contact.title_c,
             notes: contact.notes_c,
+            gender: contact.gender_c,
+            dateOfBirth: contact.date_of_birth_c,
             createdAt: contact.created_at_c,
             updatedAt: contact.updated_at_c
           };

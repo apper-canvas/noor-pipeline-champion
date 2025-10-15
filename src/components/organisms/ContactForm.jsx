@@ -105,15 +105,15 @@ const validateForm = () => {
           type="select"
           name="gender"
           value={formData.gender}
-          onChange={handleChange}
+          onChange={(e) => handleChange('gender', e.target.value)}
           error={errors.gender}
-          options={[
-            { value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' },
-            { value: 'Prefer not to say', label: 'Prefer not to say' }
-          ]}
-        />
+        >
+          <option value="">Select gender...</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </FormField>
 
         <FormField
           label="Date of Birth"

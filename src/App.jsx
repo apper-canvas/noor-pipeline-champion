@@ -11,6 +11,7 @@ import Contacts from '@/components/pages/Contacts';
 import Accounts from '@/components/pages/Accounts';
 import Pipeline from '@/components/pages/Pipeline';
 import Activities from '@/components/pages/Activities';
+import Leads from '@/components/pages/Leads';
 import Login from '@/components/pages/Login';
 import Signup from '@/components/pages/Signup';
 import Callback from '@/components/pages/Callback';
@@ -142,7 +143,8 @@ function AppRouter() {
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="contacts" element={<Contacts />} />
-          <Route path="accounts" element={<Accounts />} />
+<Route path="accounts" element={<Accounts />} />
+          <Route path="leads" element={<Leads />} />
           <Route path="pipeline" element={<Pipeline />} />
           <Route path="activities" element={<Activities />} />
         </Route>

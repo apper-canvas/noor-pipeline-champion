@@ -8,6 +8,7 @@ import { setUser, clearUser } from '@/store/userSlice';
 import Layout from '@/components/organisms/Layout';
 import Dashboard from '@/components/pages/Dashboard';
 import Contacts from '@/components/pages/Contacts';
+import Accounts from '@/components/pages/Accounts';
 import Pipeline from '@/components/pages/Pipeline';
 import Activities from '@/components/pages/Activities';
 import Login from '@/components/pages/Login';
@@ -16,7 +17,6 @@ import Callback from '@/components/pages/Callback';
 import ErrorPage from '@/components/pages/ErrorPage';
 import ResetPassword from '@/components/pages/ResetPassword';
 import PromptPassword from '@/components/pages/PromptPassword';
-
 // Create auth context
 export const AuthContext = createContext(null);
 
@@ -138,10 +138,11 @@ function AppRouter() {
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/prompt-password/:appId/:emailAddress/:provider" element={<PromptPassword />} />
         <Route path="/reset-password/:appId/:fields" element={<ResetPassword />} />
-        <Route path="/" element={<Layout />}>
+<Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="contacts" element={<Contacts />} />
+          <Route path="accounts" element={<Accounts />} />
           <Route path="pipeline" element={<Pipeline />} />
           <Route path="activities" element={<Activities />} />
         </Route>

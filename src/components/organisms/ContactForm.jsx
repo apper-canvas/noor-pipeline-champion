@@ -115,12 +115,12 @@ const validateForm = () => {
           <option value="Prefer not to say">Prefer not to say</option>
         </FormField>
 
-        <FormField
+<FormField
           label="Date of Birth"
           name="dateOfBirth"
           type="date"
           value={formData.dateOfBirth}
-          onChange={handleChange}
+          onChange={(e) => handleChange("dateOfBirth", e.target.value)}
           error={errors.dateOfBirth}
         />
       </div>

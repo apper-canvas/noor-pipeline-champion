@@ -102,10 +102,17 @@ const validateForm = () => {
         />
 <FormField
           label="Gender"
+          type="select"
           name="gender"
           value={formData.gender}
           onChange={handleChange}
           error={errors.gender}
+          options={[
+            { value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' },
+            { value: 'Prefer not to say', label: 'Prefer not to say' }
+          ]}
         />
 
         <FormField
